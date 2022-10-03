@@ -48,9 +48,11 @@ const Wrapper = styled.aside`
   transition: width 0.4s ease;
 
   &.open {
-    border-left: 2px solid var(--secondary-color);
-    width: 80%;
-    overflow: unset;
+    @media only screen and (max-width: 43.75rem) {
+      border-left: 2px solid var(--secondary-color);
+      width: 80%;
+      overflow: unset;
+    }
   }
 
   .sidebar-icon-link {

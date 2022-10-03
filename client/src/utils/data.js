@@ -1,0 +1,98 @@
+export const products = [
+  {
+    id: 1,
+    name: "",
+    category: "",
+    brand: "",
+    price: 0,
+    discount: 10,
+    image: {},
+    mainMaterial: "",
+    description: "",
+    spec: {
+      height: 20,
+      width: 40,
+      depth: 45,
+    },
+    stock: 2,
+  },
+  {
+    id: 2,
+    name: "",
+    category: "",
+    brand: "",
+    price: 0,
+    discount: 10,
+    image: {},
+    mainMaterial: "",
+    description: "",
+    spec: {
+      height: 20,
+      width: 40,
+      depth: 45,
+    },
+    stock: 2,
+  },
+  {
+    id: 3,
+    name: "",
+    category: "",
+    brand: "",
+    price: 0,
+    discount: 10,
+    image: {},
+    mainMaterial: "",
+    description: "",
+    spec: {
+      height: 20,
+      width: 40,
+      depth: 45,
+    },
+    stock: 1,
+  },
+  {
+    id: 4,
+    name: "",
+    category: "",
+    brand: "",
+    price: 0,
+    discount: 10,
+    image: {},
+    mainMaterial: "",
+    description: "",
+    spec: {
+      height: 20,
+      width: 40,
+      depth: 45,
+    },
+    stock: 0,
+  },
+];
+
+export const productsOptions = [
+  {
+    product: 1,
+    color: "red",
+    image: {},
+  },
+  {
+    product: 1,
+    color: "green",
+    image: {},
+  },
+  {
+    product: 2,
+    color: "blue",
+    image: {},
+  },
+  {
+    product: 2,
+    color: "purple",
+    image: {},
+  },
+  {
+    product: 3,
+    color: "lemon",
+    image: {},
+  },
+];

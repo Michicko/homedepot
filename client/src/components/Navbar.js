@@ -194,13 +194,17 @@ const Nav = styled.div`
   }
 
   .menu-btn {
-    /* display: none; */
+    display: none;
     border: none;
     outline: none;
     background: transparent;
     .nav-icon {
       height: 2.5rem;
       width: 2.5rem;
+    }
+
+    @media only screen and (max-width: 43.75rem) {
+      display: block;
     }
   }
 
