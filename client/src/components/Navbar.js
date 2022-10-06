@@ -75,6 +75,10 @@ const Nav = styled.div`
   display: flex;
   align-items: center;
 
+  @media only screen and (max-width: 32rem) {
+    height: 6rem;
+  }
+
   &.primary {
     background: var(--primary-color);
   }

@@ -7,10 +7,11 @@ import Button from "./Button";
 const Header = () => {
   return (
     <Wrapper>
-      <div className="bg">
-        <h5 className="logo">homedepot.</h5>
-        <Container>
-          <div className="box">
+      <div className="bg"></div>
+      <h5 className="logo">homedepot.</h5>
+      <Container>
+        <div className="box">
+          <div className="box-inner">
             <Heading type="primary">New interior collection</Heading>
             <p className="lead">
               A competent interior design will squeeze a rich
@@ -20,8 +21,8 @@ const Header = () => {
               Shop
             </Button>
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     </Wrapper>
   );
 };
@@ -29,23 +30,27 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.header`
+  position: relative;
   width: 100%;
   height: calc(100vh - 7rem);
   background-color: var(--primary-color);
 
-  @media only screen and (max-width: 43.75rem) {
-    height: calc(60vh - 7rem);
-    /* background-position: center; */
-    /* background-size: contain; */
+  @media only screen and (max-width: 32rem) {
+    height: calc(100vh - 6rem);
   }
 
   .bg {
-    height: calc(100vh - 7rem);
+    height: 100%;
     width: 100%;
     background: url(${banner});
     background-position: bottom right;
     background-size: contain;
     background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 
     @media only screen and (max-width: 43.75rem) {
       height: calc(60vh - 7rem);
@@ -54,28 +59,61 @@ const Wrapper = styled.header`
     }
 
     @media only screen and (max-width: 32rem) {
-      position: relative;
+      height: calc(60vh - 6rem);
     }
+
+    /* z-index: -1; */
+
+    /* 
+    @media only screen and (max-width: 43.75rem) {
+      height: calc(60vh - 7rem);
+      background-position: center;
+      background-size: contain;
+    }
+
+    @media only screen and (max-width: 32rem) {
+      position: relative;
+    } */
   }
 
   .box {
+    position: relative;
     height: calc(100vh - 7rem);
-    /* width: 100%; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
+    width: 100%;
     @media only screen and (max-width: 43.75rem) {
-      justify-content: flex-end;
-      padding-bottom: 5vh;
+      position: absolute;
+      height: 40vh;
+      bottom: 0;
+      left: 0;
+      background: var(--white-color);
+      padding: 0 4rem;
+    }
+    @media only screen and (max-width: 32rem) {
+      padding: 0 2rem;
     }
 
-    & > *:first-child {
-      margin-bottom: 1.5rem;
+    .box-inner {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 300;
 
-      @media only screen and (max-width: 32rem) {
-        margin-bottom: 1rem;
+      @media only screen and (max-width: 43.75rem) {
+        position: relative;
+      }
+
+      & > *:first-child {
+        margin-bottom: 1.5rem;
+
+        @media only screen and (max-width: 32rem) {
+          /* margin-bottom: 1rem; */
+        }
       }
     }
   }
