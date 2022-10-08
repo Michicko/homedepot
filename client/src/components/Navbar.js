@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import navlinks from "../utils/navlinks";
-import Container from "./Container";
+// import Container from "./Container";
 import { FaRegUser } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
@@ -246,5 +246,34 @@ const Nav = styled.div`
         color: var(--secondary-color);
       }
     }
+  }
+`;
+
+const Container = styled.div`
+  width: 100%;
+  padding: 0;
+  padding-left: 12rem;
+  padding-right: 16rem;
+
+  @media only screen and (max-width: 75rem) {
+    padding-left: 8rem;
+    padding-right: 14rem;
+  }
+  @media only screen and (max-width: 62.5rem) {
+    /* padding-left: 8rem; */
+    padding-right: 10rem;
+  }
+  @media only screen and (max-width: 53.5rem) {
+    padding-left: 4rem;
+    padding-right: 6rem;
+  }
+  @media only screen and (max-width: 43.75rem) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @media only screen and (max-width: 32rem) {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 `;

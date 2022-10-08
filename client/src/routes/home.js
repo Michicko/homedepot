@@ -1,6 +1,7 @@
+import Articles from "../components/Articles";
+import Discount from "../components/Discount";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import Slider from "../components/Slider";
 import { products } from "../utils/data";
 
 const Home = () => {
@@ -8,7 +9,10 @@ const Home = () => {
     <>
       <Navbar bg="primary" border={false} />
       <Header />
-      <Slider items={products} />
+      <main id="main">
+        <Discount products={products} />
+        <Articles />
+      </main>
     </>
   );
 };

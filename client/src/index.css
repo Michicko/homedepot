@@ -25,3 +25,10 @@ body {
   font-family: "Montserrat", sans-serif;
   /* color: #e2e2e2; */
 }
+
+#main {
+  padding: 10rem 0;
+}
+#main > * {
+  margin-bottom: 6rem;
+}

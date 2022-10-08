@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { CgFormatSlash } from "react-icons/cg";
+import Product from "./Product";
 
 const Slider = ({ items }) => {
   console.log(items);
@@ -11,7 +12,19 @@ const Slider = ({ items }) => {
         <span className="sep"> &frasl;</span>
         <IoIosArrowForward className="slider-icon" />
       </div>
-      <div className="slider"></div>
+      <div className="slider">
+        <div className="slides">
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -20,7 +33,6 @@ export default Slider;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 45rem;
 
   .ctrls {
     display: flex;
@@ -46,5 +58,29 @@ const Wrapper = styled.div`
   }
 
   .slider {
+    position: relative;
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slides {
+    min-width: 200%;
+    height: 30rem;
+    display: flex;
+
+    position: absolute;
+    left: 0;
+
+    & > *:not(:last-child) {
+      /* margin-right: 10rem; */
+      margin-right: 7.5vmax;
+    }
+  }
+
+  .slide {
+    width: 20rem;
+    height: 30rem;
+    background: var(--primary-color);
   }
 `;
