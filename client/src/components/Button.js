@@ -1,50 +1,53 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styles from "./Button.module.css";
 
 const Button = ({ children, type, size, path }) => {
+  console.log(styles);
   return (
     <>
       {type === "link" && (
-        <ButtonWrapper
-          className={size === "lg" ? "lg" : size === "md" ? "md" : "sm"}
+        <Link
           to={path}
+          className={
+            size === "lg"
+              ? `${styles.btn} ${styles.lg}`
+              : size === "md"
+              ? `${styles.btn} ${styles.md}`
+              : `${styles.btn} ${styles.sm}`
+          }
         >
           {children}
-        </ButtonWrapper>
+        </Link>
       )}
       {type === "button" && (
-        <button className={size === "lg" ? "lg" : size === "md" ? "md" : "sm"}>
+        <button
+          type="button"
+          className={
+            size === "lg"
+              ? `${styles.btn} ${styles.lg}`
+              : size === "md"
+              ? `${styles.btn} ${styles.md}`
+              : `${styles.btn} ${styles.sm}`
+          }
+        >
           {children}
         </button>
+      )}
+      {type === "input" && (
+        <input
+          type="submit"
+          value={children}
+          className={
+            size === "lg"
+              ? `${styles.btn} ${styles.lg}`
+              : size === "md"
+              ? `${styles.btn} ${styles.md}`
+              : `${styles.btn} ${styles.sm}`
+          }
+        />
       )}
     </>
   );
 };
 
 export default Button;
-
-const ButtonWrapper = styled(Link)`
-  min-width: 12rem;
-  height: 5rem;
-  background: var(--dark-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--white-color);
-
-  &.lg {
-    min-width: 20rem;
-
-    @media only screen and (max-width: 43.75rem) {
-      margin: 0 auto;
-      min-width: 85%;
-      height: 4rem;
-    }
-  }
-`;

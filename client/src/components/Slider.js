@@ -4,7 +4,6 @@ import { CgFormatSlash } from "react-icons/cg";
 import Product from "./Product";
 
 const Slider = ({ items }) => {
-  console.log(items);
   return (
     <Wrapper className="slider-container">
       <div className="ctrls">

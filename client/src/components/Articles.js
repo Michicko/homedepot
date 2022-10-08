@@ -68,6 +68,7 @@ const Wrapper = styled.section`
     @media only screen and (max-width: 48.75rem) {
       grid-template-columns: 100%;
       grid-template-rows: auto auto;
+      height: auto;
     }
 
     &__img-box {
@@ -87,7 +88,7 @@ const Wrapper = styled.section`
     &__text-box {
       height: 100%;
       width: 100%;
-      padding-left: 8rem;
+      padding-left: 7rem;
       padding-top: 3rem;
       padding-bottom: 1rem;
       padding-right: 4rem;
@@ -136,18 +137,18 @@ const Wrapper = styled.section`
     }
 
     &__text {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 400;
       line-height: 1.5;
       color: var(--dark-color);
 
       @media only screen and (max-width: 63.25rem) {
-        font-size: 1.4rem;
+        /* font-size: 1.4rem; */
         line-height: 1.3;
       }
 
       @media only screen and (max-width: 48.75rem) {
-        font-size: 1.5rem;
+        /* font-size: 1.5rem; */
         line-height: 1.5;
       }
     }

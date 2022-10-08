@@ -27,8 +27,9 @@ body {
 }
 
 #main {
-  padding: 10rem 0;
+  padding: 6rem 0;
 }
-#main > * {
+
+#main > *:not(:last-child) {
   margin-bottom: 6rem;
 }
