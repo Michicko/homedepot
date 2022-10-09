@@ -45,8 +45,8 @@ export default NewsLetter;
 
 const Wrapper = styled.section`
   width: 100%;
-  min-height: 45rem;
-  padding: 12rem 0;
+  min-height: 30rem;
+  padding: 8rem 0;
 
   @media only screen and (max-width: 34.5rem) {
     padding: 4rem 0;
