@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
 const Button = ({ children, type, size, path }) => {
-  console.log(styles);
   return (
     <>
       {type === "link" && (

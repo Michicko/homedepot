@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import NewsLetter from "../components/NewsLetter";
 import { products } from "../utils/data";
+import articles from "../utils/articles";
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
       <Header />
       <main id="main">
         <Discount products={products} />
-        <Articles />
+        <Articles articles={articles} />
         <NewsLetter />
       </main>
       <Footer />

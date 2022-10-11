@@ -4,8 +4,25 @@ import Container from "./Container";
 import Heading from "./Heading";
 import HeadingContainer from "./HeadingContainer";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useState } from "react";
 
-const Articles = () => {
+const Articles = ({ articles }) => {
+  const [index, setIndex] = useState(0);
+  const currentArticle = articles[index];
+  const { design, text, image } = currentArticle;
+  const extractedText = text.substring(0, 300);
+
+  const setCurrentArticle = (direction) => {
+    if (
+      (index <= 0 && direction === "prev") ||
+      (index >= articles.length - 1 && direction === "next")
+    )
+      return;
+    direction === "prev"
+      ? setIndex((prev) => prev - 1)
+      : setIndex((prev) => prev + 1);
+  };
+
   return (
     <Wrapper>
       <HeadingContainer>
@@ -15,24 +32,17 @@ const Articles = () => {
         <article className="article">
           <figure className="article__img-box">
             <img
-              src={`${require("../assets/imgs/scandinavian.jpg")}`}
-              alt=""
+              src={require(`../${image}`)}
+              alt={design}
               className="article-img"
             />
           </figure>
           <div className="article__text-box">
             <div className="article__main-content">
-              <h5 className="article__title">Scandinavian style</h5>
+              <h5 className="article__title">{design}</h5>
               <div className="article__texts">
-                <p className="article__text">
-                  The Scandinavian-style interior is simple and light.
-                </p>
-                <p className="article__text">
-                  This is a bright and free space, solid and reliable pieces of
-                  furniture, cozy textiles and descreet decor. Designers use it
-                  not only for design of urban apartmnents, but also for
-                  surburban cottages. Extremely comfortable, but at the same
-                  time modest design - the hallmark of scandinavian style.
+                <p className="article__text" style={{ whiteSpace: "pre-line" }}>
+                  {extractedText}...
                 </p>
               </div>
               <Link className="article__link" to={`/articles/articleId`}>
@@ -40,12 +50,18 @@ const Articles = () => {
               </Link>
             </div>
             <div className="article__ctrls">
-              <IoIosArrowBack className="article__ctrl prev" />
+              <IoIosArrowBack
+                className="article__ctrl prev"
+                onClick={() => setCurrentArticle("prev")}
+              />
               <div className="article__ctrls-sep">
-                <span>1</span>
-                <sup>/6</sup>
+                <span>{index + 1}</span>
+                <sup>/{articles.length}</sup>
               </div>
-              <IoIosArrowForward className="article__ctrl next" />
+              <IoIosArrowForward
+                className="article__ctrl next"
+                onClick={() => setCurrentArticle("next")}
+              />
             </div>
           </div>
         </article>
@@ -64,6 +80,7 @@ const Wrapper = styled.section`
     height: 35rem;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 35rem;
 
     @media only screen and (max-width: 48.75rem) {
       grid-template-columns: 100%;
@@ -163,6 +180,7 @@ const Wrapper = styled.section`
     &__ctrls {
       display: flex;
       align-items: center;
+      user-select: none;
     }
 
     &__ctrl {
@@ -174,7 +192,7 @@ const Wrapper = styled.section`
     &__ctrls-sep {
       span,
       sup {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 500;
         color: var(--dark-color);
       }
@@ -183,6 +201,7 @@ const Wrapper = styled.section`
         font-size: 1.2rem;
         font-weight: 500;
         color: rgba(60, 60, 60, 0.6);
+        margin-left: 0.5rem;
       }
     }
   }
