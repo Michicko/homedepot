@@ -6,14 +6,70 @@ import { FaRegUser } from "react-icons/fa";
 import { navlinks } from "@/utils/links";
 import { generateUniqueId } from "@/utils/funcs";
 import { CgMenuRightAlt, CgClose } from "react-icons/cg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Sidebar from "./Sidebar";
 
 const Navbar = () => {
   const { route } = useRouter();
+  const router = useRouter();
   const [isSearchOpened, setIsSearchOpened] = useState(false);
+  const [isSidebarOpened, setIsSidebarOpened] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
+  // hide overflow when sidebar is opened
+  useEffect(() => {
+    setIsMounted(true);
+    if (isMounted) {
+      if (isSidebarOpened) {
+        document.querySelector("html").style.overflow = "hidden";
+      } else {
+        document.querySelector("html").style.overflow = "unset";
+      }
+    }
+
+    return () => {
+      setIsMounted(false);
+    };
+  }, [isSidebarOpened]);
+
+  // on resize close sidebr if opened
+  useEffect(() => {
+    const closeSidebarOnResize = () => {
+      if (window.innerWidth >= 768 && isSidebarOpened) {
+        closeSidebar();
+      }
+    };
+
+    window.addEventListener("resize", closeSidebarOnResize);
+
+    return () => {
+      window.removeEventListener("resize", closeSidebarOnResize);
+    };
+  });
+
+  // when route changes closesidebar
+  useEffect(() => {
+    if (isSidebarOpened) {
+      closeSidebar();
+    }
+  }, [route]);
+
+  // toggle search input
   const toggleSearchInput = () => {
     setIsSearchOpened(!isSearchOpened);
+    if (isSidebarOpened) {
+      closeSidebar();
+    }
+  };
+
+  // open sidebar on  mobile view
+  const openSidebar = () => {
+    setIsSidebarOpened(true);
+  };
+
+  // close sidebar on  mobile view
+  const closeSidebar = () => {
+    setIsSidebarOpened(false);
   };
 
   return (
@@ -34,7 +90,11 @@ const Navbar = () => {
             return (
               <Link
                 href={`/${navlink}`}
-                className={styles.navlink}
+                className={
+                  route === `/${navlink}`
+                    ? `${styles.navlink} ${styles.active}`
+                    : `${styles.navlink}`
+                }
                 key={generateUniqueId()}
               >
                 {navlink}
@@ -96,8 +156,21 @@ const Navbar = () => {
         <Link href="/cart">
           <BsHandbag className={styles["nav-icon"]} />
         </Link>
-        <CgMenuRightAlt className={`${styles["nav-icon"]} ${styles["menu"]}`} />
+        {isSidebarOpened ? (
+          <CgClose
+            className={`${styles["nav-icon"]} ${styles["menu"]}`}
+            onClick={closeSidebar}
+          />
+        ) : (
+          <CgMenuRightAlt
+            className={`${styles["nav-icon"]} ${styles["menu"]}`}
+            onClick={openSidebar}
+          />
+        )}
       </div>
+
+      {/* sidebar for mobile view */}
+      <Sidebar isSidebarOpened={isSidebarOpened} />
     </nav>
   );
 };
