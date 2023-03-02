@@ -102,6 +102,35 @@ export default function Home() {
             </div>
           </div>
         </Section>
+        {/* newsletter */}
+        <div className={styles.newsletter}>
+          <div className="">
+            <h3 className={styles["newsletter-heading"]}>Newsletter</h3>
+            <p className={styles["newsletter-lead"]}>
+              Register now with our newsletter and get{" "}
+              <span>the latest updates available</span>
+            </p>
+          </div>
+          <form className={styles["newsletter-form"]}>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={`${styles["newsletter-form-input"]} ${styles.name}`}
+              placeholder="Name"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              className={`${styles["newsletter-form-input"]} ${styles.email}`}
+            />
+            <button type="submit" className={styles["newsletter-btn"]}>
+              send
+            </button>
+          </form>
+        </div>
       </main>
     </>
   );
