@@ -1,0 +1,38 @@
+.slider {
+  width: 100%;
+  position: relative;
+}
+
+.slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 26rem;
+}
+
+.slides > *:not(:last-child) {
+  margin-right: 8rem;
+}
+
+.slider-inner {
+  height: 30rem;
+  position: relative;
+  overflow-x: auto;
+}
+
+.slider-ctrls {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.slider-btn {
+  height: 2rem;
+  width: 2rem;
+}
+
+.slider-btn.slash {
+  color: rgba(0, 0, 0, 0.3);
+}

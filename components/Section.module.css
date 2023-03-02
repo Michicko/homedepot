@@ -1,0 +1,49 @@
+.section {
+  width: 100%;
+  padding-top: 5rem;
+  margin-bottom: 6rem;
+}
+
+.section-container {
+  padding: 0 6vmax;
+}
+
+.section-heading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.section-heading-icon {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  left: -2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+}
+
+.section-content {
+  width: 100%;
+}
+
+@media only screen and (max-width: 32rem) {
+  .section-container {
+    padding: 0 4vmax;
+  }
+}
+
+@media only screen and (max-width: 23rem) {
+  .section-container {
+    padding: 0 2rem;
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+  }
+}
