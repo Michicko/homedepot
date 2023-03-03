@@ -1,5 +1,16 @@
+import Hero from "@/components/Hero";
+
 const Shop = () => {
-  return <h1>Shop page</h1>;
+  return (
+    <>
+      <Hero
+        withBg={true}
+        withHeading={true}
+        heading="Product catalog"
+        history={["Shop", "All products"]}
+      />
+    </>
+  );
 };
 
 export default Shop;
