@@ -14,6 +14,21 @@ export default function Home() {
   const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
   const article = articles[currentArticleIndex];
 
+  const nextArticle = () => {
+    let next = currentArticleIndex + 1;
+    if (next > articles.length - 1) {
+      next = articles.length - 1;
+    }
+    setCurrentArticleIndex(next);
+  };
+  const previousArticle = () => {
+    let previous = currentArticleIndex - 1;
+    if (previous < 0) {
+      previous = 0;
+    }
+    setCurrentArticleIndex(previous);
+  };
+
   return (
     <>
       <header className={styles.header}>
@@ -79,6 +94,7 @@ export default function Home() {
               <h3 className={styles["article-title"]}>{article.design}</h3>
               <div className={styles["article-texts"]}>
                 {article.text
+                  .substring(0, 300)
                   .split("\n")
                   .splice(0, 2)
                   .map((text) => {
@@ -99,12 +115,22 @@ export default function Home() {
                 more details
               </Link>
               <div className={styles["articles-ctrls"]}>
-                <IoIosArrowBack className={styles["article-btn"]} />
+                <IoIosArrowBack
+                  className={styles["article-btn"]}
+                  onClick={previousArticle}
+                />
                 <div className={styles["pagination"]}>
-                  <span className={styles["currentIndex"]}>1</span>
-                  <sup className={styles["article-total"]}>/6</sup>
+                  <span className={styles["currentIndex"]}>
+                    {currentArticleIndex + 1}
+                  </span>
+                  <sup className={styles["article-total"]}>
+                    /{articles.length}
+                  </sup>
                 </div>
-                <IoIosArrowForward className={styles["article-btn"]} />
+                <IoIosArrowForward
+                  className={styles["article-btn"]}
+                  onClick={nextArticle}
+                />
               </div>
             </div>
           </div>
