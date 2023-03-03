@@ -383,6 +383,42 @@ export const products = [
     ],
     stock: 3,
   },
+  {
+    id: 3,
+    slug: "wide-chair",
+    name: "wide chair",
+    price: 150,
+    image: "wide-chair.png",
+    discount: 0,
+    size: {},
+    productOptions: [
+      {
+        id: "3a",
+        color: "black",
+        image: "wide-chair.png",
+        product: 3,
+      },
+      {
+        id: "3a",
+        color: "blue",
+        image: "wide-chair-2.png",
+        product: 3,
+      },
+      {
+        id: "3b",
+        color: "white",
+        image: "wide-chair-4.png",
+        product: 2,
+      },
+      {
+        id: "3c",
+        color: "grey",
+        image: "wide-chair-3.png",
+        product: 2,
+      },
+    ],
+    stock: 3,
+  },
 ];
 
 export const categories = [

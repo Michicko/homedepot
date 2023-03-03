@@ -5,7 +5,6 @@ import { CgFormatSlash } from "react-icons/cg";
 
 const Hero = ({ withBg, withHeading, heading, history }) => {
   const router = useRouter();
-  console.log(router);
   return (
     <header
       className={withBg ? `${styles.hero} ${styles.withBg}` : styles.hero}
@@ -19,7 +18,7 @@ const Hero = ({ withBg, withHeading, heading, history }) => {
                 href={`/${item === "all products" ? "shop" : item}`}
                 className={`${styles["history-link"]} ${styles.active}`}
               >
-                {item}
+                {item.slice(0, 1).toUpperCase() + item.slice(1)}
               </Link>
             );
           return (
@@ -28,7 +27,7 @@ const Hero = ({ withBg, withHeading, heading, history }) => {
                 href={`/${item === "all products" ? "shop" : item}`}
                 className={styles["history-link"]}
               >
-                {item}
+                {item.slice(0, 1).toUpperCase() + item.slice(1)}
               </Link>
               <CgFormatSlash className={styles["history-icon"]} />
             </div>

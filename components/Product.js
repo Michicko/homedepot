@@ -9,7 +9,14 @@ const Product = ({ product }) => {
   return (
     <Link href={`/shop/${slug}`} className={styles.product}>
       <div className={styles["product-img-box"]}>
-        <Image src={img} height={170} width={140} />
+        <Image
+          src={img}
+          fill
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          className={styles["product-img"]}
+        />
       </div>
       <div className={styles["product-body"]}>
         <h3 className={styles["product-name"]}>Aj Eb</h3>

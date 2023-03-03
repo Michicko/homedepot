@@ -12,7 +12,11 @@
 }
 
 .slides > *:not(:last-child) {
-  margin-right: 8rem;
+  margin-right: 4rem;
+}
+
+.slides > * {
+  width: 20rem;
 }
 
 .slider-inner {

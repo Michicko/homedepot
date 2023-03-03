@@ -1,0 +1,85 @@
+.colors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+}
+
+.sort {
+  margin-left: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primar-color);
+  text-transform: capitalize;
+}
+
+.sort option {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primar-color);
+  text-transform: capitalize;
+}
+
+.utils-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primar-color);
+}
+.views {
+  display: flex;
+  align-items: center;
+}
+
+.views-btns {
+  display: flex;
+  margin-left: 1rem;
+  align-items: center;
+}
+
+.views-icon {
+  height: 2rem;
+  width: 2rem;
+  color: rgba(60, 60, 60, 0.5);
+}
+
+.views-icon.active {
+  color: var(--primar-color);
+}
+
+.views-btns > *:first-child {
+  margin-right: 0.5rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-btn {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: var(--primar-color);
+}
+
+.pagination-btn.prev {
+  margin-right: 1rem;
+}
+
+.pagination-btn.next {
+  margin-left: 1rem;
+}
+
+.pagination-numbers {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-numbers > *:not(:last-child) {
+  margin-right: 0.65rem;
+}
