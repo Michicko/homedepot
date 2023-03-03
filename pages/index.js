@@ -82,7 +82,14 @@ export default function Home() {
                   .split("\n")
                   .splice(0, 2)
                   .map((text) => {
-                    return <p className={styles["article-text"]}>{text}</p>;
+                    return (
+                      <p
+                        className={styles["article-text"]}
+                        key={generateUniqueId()}
+                      >
+                        {text}
+                      </p>
+                    );
                   })}
               </div>
               <Link
