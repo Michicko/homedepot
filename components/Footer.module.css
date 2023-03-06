@@ -28,7 +28,7 @@
 }
 
 .footer-links > *:not(:last-child) {
-  margin-right: 3vmax;
+  margin-right: 2vmax;
 }
 
 .footer-socials > *:not(:last-child) {

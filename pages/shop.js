@@ -4,10 +4,12 @@ import styles from "../styles/Shop.module.css";
 import { categories, products } from "@/utils/data";
 import Sort from "@/components/Sort";
 import View from "@/components/View";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Pagination from "@/components/Pagination";
 import Product from "@/components/Product";
 import { generateUniqueId } from "@/utils/funcs";
+import { useDispatch, useSelector } from "react-redux";
+import { changeView } from "@/features/pageSlice";
+import MobileHero from "@/components/MobileHero";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -20,6 +22,15 @@ const Shop = () => {
     "roomers",
     "seletti",
   ];
+  const dispatch = useDispatch();
+  const view = useSelector((state) => state.page.view);
+
+  const changeUiView = (type) => {
+    dispatch(changeView(type));
+  };
+
+  console.log(styles[view]);
+
   return (
     <>
       <Hero
@@ -27,6 +38,14 @@ const Shop = () => {
         withHeading={true}
         heading="Product catalog"
         history={["shop", "all products"]}
+      />
+      <MobileHero
+        pageHeading={<h3>Armchairs</h3>}
+        selector={
+          <select>
+            <option value="hello">Hello</option>
+          </select>
+        }
       />
       <div className={styles.shop}>
         <div className={styles["shop-container"]}>
@@ -49,11 +68,17 @@ const Shop = () => {
           <main className={styles["shop-content"]}>
             <div className={styles["shop-topbar"]}>
               <Sort />
-              <View />
+              <View view={view} changeUiView={changeUiView} />
             </div>
-            <div className={styles["shop-products"]}>
+            <div className={`${styles["shop-products"]} ${styles[view]}`}>
               {products.map((product) => {
-                return <Product product={product} key={generateUniqueId()} />;
+                return (
+                  <Product
+                    product={product}
+                    key={generateUniqueId()}
+                    view={view}
+                  />
+                );
               })}
             </div>
           </main>

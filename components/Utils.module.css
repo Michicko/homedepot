@@ -83,3 +83,9 @@
 .pagination-numbers > *:not(:last-child) {
   margin-right: 0.65rem;
 }
+
+.backBtn {
+  color: var(--primar-color);
+  height: 2rem;
+  width: 2rem;
+}

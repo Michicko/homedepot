@@ -4,10 +4,14 @@ import Link from "next/link";
 import img from "../public/wide-chair-2.png";
 import styles from "./Product.module.css";
 
-const Product = ({ product }) => {
+const Product = ({ product, view }) => {
   const { slug, name, price, image, discount } = product;
+  console.log(view);
   return (
-    <Link href={`/shop/${slug}`} className={styles.product}>
+    <Link
+      href={`/shop/${slug}`}
+      className={`${styles.product} ${styles[view]}`}
+    >
       <div className={styles["product-img-box"]}>
         <Image
           src={img}

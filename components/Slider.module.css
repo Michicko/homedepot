@@ -12,7 +12,7 @@
 }
 
 .slides > *:not(:last-child) {
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 .slides > * {
@@ -39,4 +39,10 @@
 
 .slider-btn.slash {
   color: rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (width >= 48rem) {
+  .slides > *:not(:last-child) {
+    margin-right: 4rem;
+  }
 }
