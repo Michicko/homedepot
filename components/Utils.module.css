@@ -4,6 +4,40 @@
   flex-wrap: wrap;
 }
 
+.colors > *:not(:last-child) {
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.color {
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  opacity: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color:hover,
+.color:active,
+.color.active,
+.color.all.active {
+  opacity: 1;
+}
+
+.color-icon {
+  height: 1.85rem;
+  width: 1.85rem;
+  color: var(--white-color);
+}
+
+.color.all .color-icon {
+  color: var(--primary-color);
+}
+
 .sort-container {
   display: flex;
   align-items: center;

@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeView } from "@/features/pageSlice";
 import MobileHero from "@/components/MobileHero";
 import CustomSelect from "@/components/CustomSelect";
+import Colors from "@/components/Colors";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -93,7 +94,7 @@ const Shop = () => {
             <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>BRANDS</h3>
             <Filters name={"brand"} filters={brands} />
             <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>COLORS</h3>
-            <div className="colors"></div>
+            <Colors />
           </aside>
           <main className={styles["shop-content"]}>
             <div className={styles["shop-topbar"]}>
