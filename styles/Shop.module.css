@@ -42,17 +42,18 @@
 }
 
 .shop-products,
-.shop-products.grid {
+.shop-products.grid,
+.shop-products.list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(46%, 1fr));
   grid-column-gap: 4%;
 }
 
-.shop-products.list {
+/* .shop-products.list {
   grid-template-columns: 50rem;
   grid-row-gap: 2rem;
-}
+} */
 
 .shop-pagination-box {
   width: 100%;
@@ -75,7 +76,8 @@
   }
 
   .shop-products,
-  .shop-products.grid {
+  .shop-products.grid,
+  .shop-products.list {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28%, 1fr));
@@ -109,6 +111,11 @@
   .shop-pagination-box {
     grid-template-columns: 20% 80%;
     grid-template-areas: "n pagination";
+  }
+
+  .shop-products.list {
+    grid-template-columns: 50rem;
+    grid-row-gap: 2rem;
   }
 }
 
