@@ -9,6 +9,7 @@
   z-index: 200;
   overflow: hidden;
   transition: width 0.2s ease-in;
+  z-index: 500;
 }
 
 .sidebar.open {

@@ -10,6 +10,7 @@ import { generateUniqueId } from "@/utils/funcs";
 import { useDispatch, useSelector } from "react-redux";
 import { changeView } from "@/features/pageSlice";
 import MobileHero from "@/components/MobileHero";
+import CustomSelect from "@/components/CustomSelect";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -29,8 +30,6 @@ const Shop = () => {
     dispatch(changeView(type));
   };
 
-  console.log(styles[view]);
-
   return (
     <>
       <Hero
@@ -40,11 +39,42 @@ const Shop = () => {
         history={["shop", "all products"]}
       />
       <MobileHero
-        pageHeading={<h3>Armchairs</h3>}
+        headingLg={"Armchairs"}
         selector={
-          <select>
-            <option value="hello">Hello</option>
-          </select>
+          <CustomSelect
+            name={"Filters"}
+            options={
+              <>
+                <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                  CATEGORIES
+                </h3>
+                <Filters
+                  name={"category"}
+                  filters={categories}
+                  noTotal={true}
+                  flexed={true}
+                />
+                <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                  MATERIALS
+                </h3>
+                <Filters
+                  name={"material"}
+                  filters={materials}
+                  noTotal={true}
+                  flexed={true}
+                />
+                <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                  BRANDS
+                </h3>
+                <Filters
+                  name={"brand"}
+                  filters={brands}
+                  noTotal={true}
+                  flexed={true}
+                />
+              </>
+            }
+          />
         }
       />
       <div className={styles.shop}>
@@ -52,16 +82,16 @@ const Shop = () => {
           <aside className={styles["shop-filters"]}>
             {/* categories */}
             <h3 className={styles["shop-heading"]}>Categories</h3>
-            <Filters name={"categories"} filters={categories} />
+            <Filters name={"category"} filters={categories} />
             {/* filter by price */}
             <h3 className={`${styles["shop-heading"]}`}>Filter by</h3>
             <div className="price"></div>
             <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
               MATERIALS
             </h3>
-            <Filters name={"materials"} filters={materials} />
+            <Filters name={"material"} filters={materials} />
             <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>BRANDS</h3>
-            <Filters name={"brands"} filters={brands} />
+            <Filters name={"brand"} filters={brands} />
             <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>COLORS</h3>
             <div className="colors"></div>
           </aside>

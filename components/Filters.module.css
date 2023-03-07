@@ -13,6 +13,16 @@
   margin-bottom: 1.2rem;
 }
 
+.filters.flex {
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.filters.flex > *:not(:last-child) {
+  margin-right: 3vmax;
+}
+
 .filter-btn {
   display: block;
   border: none;
