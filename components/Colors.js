@@ -1,6 +1,7 @@
 import utilsStyles from "./Utils.module.css";
 import { IoMdCheckmark } from "react-icons/io";
 import { BsSlashLg } from "react-icons/bs";
+import { generateUniqueId } from "@/utils/funcs";
 
 const Colors = () => {
   const colors = [
@@ -30,6 +31,7 @@ const Colors = () => {
                 ? `${utilsStyles.color} ${utilsStyles.active}`
                 : utilsStyles.color
             }
+            key={generateUniqueId()}
             style={
               color === "all"
                 ? { background: "transparent", border: "1px solid #000" }

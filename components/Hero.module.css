@@ -72,6 +72,7 @@
 
 @media only screen and (width >= 48rem) {
   .hero {
+    display: block;
     width: 100%;
     padding: 2rem 0;
   }

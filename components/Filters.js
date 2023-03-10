@@ -16,6 +16,7 @@ const Filters = ({ name, filters, noTotal, flexed }) => {
                 ? `${styles.filter} ${styles.active}`
                 : `${styles.filter}`
             }
+            key={generateUniqueId()}
           >
             <button key={generateUniqueId()} className={styles["filter-btn"]}>
               {filter}

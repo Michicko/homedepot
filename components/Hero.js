@@ -1,7 +1,8 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./Hero.module.css";
 import { CgFormatSlash } from "react-icons/cg";
+import { generateUniqueId } from "@/utils/funcs";
+import React from "react";
 
 const Hero = ({ withBg, withHeading, heading, history }) => {
   const router = useRouter();
@@ -11,24 +12,18 @@ const Hero = ({ withBg, withHeading, heading, history }) => {
     >
       {withHeading && <h2 className={styles["hero-heading"]}>{heading}</h2>}
       <div className={styles["hero-history"]}>
-        {history.map((item, i) => {
-          if (i === history.length - 1)
+        {history.map((link, i) => {
+          if (i === history.length - 1) {
             return (
-              <Link
-                href={`/${item === "all products" ? "shop" : item}`}
-                className={`${styles["history-link"]} ${styles.active}`}
-              >
-                {item.slice(0, 1).toUpperCase() + item.slice(1)}
-              </Link>
+              <React.Fragment key={generateUniqueId()}>{link}</React.Fragment>
             );
+          }
           return (
-            <div className={styles["history-link-container"]}>
-              <Link
-                href={`/${item === "all products" ? "shop" : item}`}
-                className={styles["history-link"]}
-              >
-                {item.slice(0, 1).toUpperCase() + item.slice(1)}
-              </Link>
+            <div
+              className={styles["history-link-container"]}
+              key={generateUniqueId()}
+            >
+              {link}
               <CgFormatSlash className={styles["history-icon"]} />
             </div>
           );

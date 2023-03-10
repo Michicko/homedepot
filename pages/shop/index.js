@@ -1,6 +1,6 @@
 import Filters from "@/components/Filters";
 import Hero from "@/components/Hero";
-import styles from "../styles/Shop.module.css";
+import styles from "../../styles/Shop.module.css";
 import { categories, products } from "@/utils/data";
 import Sort from "@/components/Sort";
 import View from "@/components/View";
@@ -13,6 +13,7 @@ import MobileHero from "@/components/MobileHero";
 import CustomSelect from "@/components/CustomSelect";
 import Colors from "@/components/Colors";
 import RangeSlider from "@/components/RangeSlider";
+import HeroHistoryLink from "@/components/HeroHistoryLink";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -40,7 +41,14 @@ const Shop = () => {
         withBg={true}
         withHeading={true}
         heading="Product catalog"
-        history={["shop", "all products"]}
+        history={[
+          <HeroHistoryLink link={"/shop"} text={"Shop"} />,
+          <HeroHistoryLink
+            link={"/shop"}
+            text={"All products"}
+            current={true}
+          />,
+        ]}
       />
       <MobileHero
         headingLg={"Armchairs"}
