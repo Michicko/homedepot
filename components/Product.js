@@ -6,7 +6,6 @@ import styles from "./Product.module.css";
 
 const Product = ({ product, view }) => {
   const { slug, name, price, image, discount } = product;
-  console.log(view);
   return (
     <Link
       href={`/shop/${slug}`}

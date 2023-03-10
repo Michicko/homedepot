@@ -41,6 +41,11 @@
   font-weight: 500;
 }
 
+.filter.active.not-all .filter-total,
+.filter.active.not-all .filter-btn {
+  font-weight: 600;
+  text-decoration: underline;
+}
 .filter.active .filter-total,
 .filter.active .filter-btn {
   font-weight: 600;

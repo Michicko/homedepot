@@ -3,7 +3,18 @@ import { IoMdCheckmark } from "react-icons/io";
 import { BsSlashLg } from "react-icons/bs";
 
 const Colors = () => {
-  const colors = ["all", "red", "green", "purple", "black"];
+  const colors = [
+    "all",
+    "red",
+    "green",
+    "purple",
+    "black",
+    "pink",
+    "blue",
+    "brown",
+    "lightblue",
+    "violet",
+  ];
   const current = "all";
   return (
     <div className={utilsStyles.colors}>

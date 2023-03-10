@@ -12,6 +12,7 @@ import { changeView } from "@/features/pageSlice";
 import MobileHero from "@/components/MobileHero";
 import CustomSelect from "@/components/CustomSelect";
 import Colors from "@/components/Colors";
+import RangeSlider from "@/components/RangeSlider";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -30,6 +31,8 @@ const Shop = () => {
   const changeUiView = (type) => {
     dispatch(changeView(type));
   };
+
+  const prices = [120, 250, 100, 400, 550, 780, 350, 440, 230];
 
   return (
     <>
@@ -56,6 +59,19 @@ const Shop = () => {
                   flexed={true}
                 />
                 <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                  PRICE
+                </h3>
+                {/* price */}
+                <RangeSlider
+                  min={Math.min(...prices)}
+                  max={Math.max(...prices)}
+                  onChange={({ min, max }) => {
+                    // console.log(min, max);
+                    // set price from
+                    // set price to
+                  }}
+                />
+                <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
                   MATERIALS
                 </h3>
                 <Filters
@@ -73,6 +89,10 @@ const Shop = () => {
                   noTotal={true}
                   flexed={true}
                 />
+                <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                  COLORS
+                </h3>
+                <Colors />
               </>
             }
           />
@@ -82,19 +102,45 @@ const Shop = () => {
         <div className={styles["shop-container"]}>
           <aside className={styles["shop-filters"]}>
             {/* categories */}
-            <h3 className={styles["shop-heading"]}>Categories</h3>
-            <Filters name={"category"} filters={categories} />
+            <div>
+              <h3 className={styles["shop-heading"]}>Categories</h3>
+              <Filters name={"category"} filters={categories} />
+            </div>
             {/* filter by price */}
             <h3 className={`${styles["shop-heading"]}`}>Filter by</h3>
-            <div className="price"></div>
-            <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
-              MATERIALS
-            </h3>
-            <Filters name={"material"} filters={materials} />
-            <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>BRANDS</h3>
-            <Filters name={"brand"} filters={brands} />
-            <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>COLORS</h3>
-            <Colors />
+            <div>
+              <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                PRICE
+              </h3>
+              {/* price */}
+              <RangeSlider
+                min={Math.min(...prices)}
+                max={Math.max(...prices)}
+                onChange={({ min, max }) => {
+                  // console.log(min, max);
+                  // set price from
+                  // set price to
+                }}
+              />
+            </div>
+            <div>
+              <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                MATERIALS
+              </h3>
+              <Filters name={"material"} filters={materials} />
+            </div>
+            <div>
+              <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                BRANDS
+              </h3>
+              <Filters name={"brand"} filters={brands} />
+            </div>
+            <div>
+              <h3 className={`${styles["shop-heading"]} ${styles.sm}`}>
+                COLORS
+              </h3>
+              <Colors />
+            </div>
           </aside>
           <main className={styles["shop-content"]}>
             <div className={styles["shop-topbar"]}>

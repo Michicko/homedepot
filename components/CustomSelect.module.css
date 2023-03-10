@@ -41,7 +41,7 @@
 }
 
 .customSelect-options > *:nth-child(even) {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .customSelect-options > *:last-child {

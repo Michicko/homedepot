@@ -10,7 +10,9 @@ const Filters = ({ name, filters, noTotal, flexed }) => {
         return (
           <div
             className={
-              filter === current
+              filter === current && filter !== "all"
+                ? `${styles.filter} ${styles.active} ${styles["not-all"]}`
+                : filter === current && filter === "all"
                 ? `${styles.filter} ${styles.active}`
                 : `${styles.filter}`
             }

@@ -18,6 +18,10 @@
   margin-bottom: 2rem;
 }
 
+.shop-heading.main {
+  margin-bottom: 3rem;
+}
+
 .shop-heading.sm {
   font-size: 1.3rem;
   font-weight: 700;
@@ -27,8 +31,8 @@
   display: none;
 }
 
-.shop-filters > *:nth-child(even) {
-  margin-bottom: 4rem;
+.shop-filters > *:not(:last-child) {
+  margin-bottom: 3.5rem;
 }
 
 .shop-topbar {
@@ -49,11 +53,6 @@
   grid-template-columns: repeat(auto-fit, minmax(46%, 1fr));
   grid-column-gap: 4%;
 }
-
-/* .shop-products.list {
-  grid-template-columns: 50rem;
-  grid-row-gap: 2rem;
-} */
 
 .shop-pagination-box {
   width: 100%;
