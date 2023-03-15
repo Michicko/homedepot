@@ -23,8 +23,8 @@
   height: 100%;
   display: flex;
   align-items: flex-end;
-  padding-left: 6vmax;
-  padding-right: 8vmax;
+  /* padding-left: 6vmax; */
+  /* padding-right: 8vmax; */
 }
 
 .nav-mobile-view {
@@ -75,8 +75,13 @@
   width: 2.5rem;
 }
 
-.nav-icon.rhs {
-  margin-left: 1rem;
+.nav-rhs {
+  display: flex;
+  align-items: center;
+}
+
+.nav-rhs > *:not(:last-child) {
+  margin-right: 1rem;
 }
 
 .nav-input-box {
@@ -161,11 +166,14 @@
   .nav-logo.mobile {
     display: none;
   }
+
+  .nav-rhs {
+    margin-right: 2vmax;
+  }
 }
 
 @media only screen and (width >= 64rem) {
-  .nav-web-view {
-    padding-left: 8vmax;
-    padding-right: 10vmax;
+  .nav-rhs {
+    margin-right: 4vmax;
   }
 }

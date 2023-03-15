@@ -81,7 +81,7 @@ const Navbar = () => {
       }
     >
       {/* web view nav */}
-      <div className={styles["nav-web-view"]}>
+      <div className={`${styles["nav-web-view"]} row`}>
         <Link href="/" className={`${styles["nav-logo"]} ${styles.web}`}>
           homedepot.
         </Link>
@@ -102,29 +102,32 @@ const Navbar = () => {
             );
           })}
         </div>
-        <div className={`${styles["nav-input-box"]} ${styles.rhs}`}>
-          <BsSearch
-            className={`${styles["nav-icon"]} ${styles["search-icon"]}`}
-            onClick={toggleSearchInput}
-          />
-          <input
-            type="text"
-            name="search"
-            id="search"
-            className={
-              isSearchOpened
-                ? `${styles["nav-input"]} ${styles.show}`
-                : `${styles["nav-input"]}`
-            }
-            placeholder="Search..."
-          />
+
+        <div className={styles["nav-rhs"]}>
+          <div className={`${styles["nav-input-box"]}`}>
+            <BsSearch
+              className={`${styles["nav-icon"]} ${styles["search-icon"]}`}
+              onClick={toggleSearchInput}
+            />
+            <input
+              type="text"
+              name="search"
+              id="search"
+              className={
+                isSearchOpened
+                  ? `${styles["nav-input"]} ${styles.show}`
+                  : `${styles["nav-input"]}`
+              }
+              placeholder="Search..."
+            />
+          </div>
+          <Link href="/profile">
+            <FaRegUser className={`${styles["nav-icon"]} ${styles.rhs}`} />
+          </Link>
+          <Link href="/cart">
+            <BsHandbag className={`${styles["nav-icon"]} ${styles.rhs}`} />
+          </Link>
         </div>
-        <Link href="/profile">
-          <FaRegUser className={`${styles["nav-icon"]} ${styles.rhs}`} />
-        </Link>
-        <Link href="/cart">
-          <BsHandbag className={`${styles["nav-icon"]} ${styles.rhs}`} />
-        </Link>
       </div>
 
       {/* mobile view logo */}

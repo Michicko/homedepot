@@ -1,11 +1,9 @@
-import { useRouter } from "next/router";
 import styles from "./Hero.module.css";
 import { CgFormatSlash } from "react-icons/cg";
 import { generateUniqueId } from "@/utils/funcs";
 import React from "react";
 
 const Hero = ({ withBg, withHeading, heading, history }) => {
-  const router = useRouter();
   return (
     <header
       className={withBg ? `${styles.hero} ${styles.withBg}` : styles.hero}

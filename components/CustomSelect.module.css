@@ -24,12 +24,16 @@
   width: 100%;
   background: var(--white-color);
   position: absolute;
-  top: 8rem;
+  top: 9.5rem;
   left: 0;
   z-index: 200;
   height: 0;
   overflow: hidden;
   padding: 0;
+}
+
+.customSelect-options.withSmHeading {
+  top: 11.5rem;
 }
 
 .customSelect-options.open {

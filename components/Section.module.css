@@ -5,7 +5,6 @@
 }
 
 .section-container {
-  padding: 0 6vmax;
 }
 
 .section-heading {
@@ -33,16 +32,9 @@
 }
 
 @media only screen and (max-width: 32rem) {
-  .section-container {
-    padding: 0 4vmax;
-  }
 }
 
 @media only screen and (max-width: 23rem) {
-  .section-container {
-    padding: 0 2rem;
-  }
-
   .section-heading {
     font-size: 1.5rem;
   }

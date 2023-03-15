@@ -36,10 +36,13 @@
   margin-bottom: 1rem;
 }
 
+.header__text-section > *:nth-child(1) {
+  text-align: center;
+}
 .header__text-section > *:nth-child(2) {
   margin-bottom: auto;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 .header__text-section > *:nth-child(3) {
   margin: 0 auto;
@@ -313,8 +316,14 @@
     padding-left: 6vmax;
   }
 
+  .header__text-section > *:nth-child(1) {
+    text-align: left;
+  }
+
   .header__text-section > *:nth-child(2) {
     margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .header__text-section > *:nth-child(3) {

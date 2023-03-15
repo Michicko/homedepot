@@ -3,7 +3,7 @@ import styles from "./CustomSelect.module.css";
 import { toggleCustomSelect } from "../features/pageSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const CustomSelect = ({ name, options }) => {
+const CustomSelect = ({ name, options, withSmHeading }) => {
   const dispatch = useDispatch();
   const openSelector = useSelector((state) => state.page.customSelectOpened);
 
@@ -30,8 +30,10 @@ const CustomSelect = ({ name, options }) => {
       </div>
       <div
         className={
-          openSelector
+          openSelector && !withSmHeading
             ? `${styles["customSelect-options"]} ${styles.open}`
+            : openSelector && withSmHeading
+            ? `${styles["customSelect-options"]} ${styles.open} ${styles.withSmHeading}`
             : `${styles["customSelect-options"]}`
         }
       >

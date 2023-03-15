@@ -37,7 +37,7 @@
 .slider__left-value,
 .slider__right-value {
   color: var(--primary-color);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.3rem;
   margin-top: 20px;
 }

@@ -14,6 +14,7 @@ import CustomSelect from "@/components/CustomSelect";
 import Colors from "@/components/Colors";
 import RangeSlider from "@/components/RangeSlider";
 import HeroHistoryLink from "@/components/HeroHistoryLink";
+import React from "react";
 
 const Shop = () => {
   const materials = ["wood", "metal", "leather", "plastic", "fabric"];
@@ -106,7 +107,7 @@ const Shop = () => {
           />
         }
       />
-      <div className={styles.shop}>
+      <div className={`${styles.shop} row`}>
         <div className={styles["shop-container"]}>
           <aside className={styles["shop-filters"]}>
             {/* categories */}

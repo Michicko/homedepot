@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 :root {
   --primary-color: #3c3c3c;
   --secondary-color: #ff9344;
@@ -8,8 +10,6 @@
   --bp-md: 48rem;
   --bp-sm: 26.5rem;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 *,
 *::before,
@@ -48,16 +48,44 @@ body::-webkit-scrollbar {
 .btn {
   border: none;
   outline: none;
-  background: none;
+  background: transparent;
   text-decoration: none;
   color: var(--white-color);
-  min-width: 16rem;
+  min-width: 16vmax;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  display: block;
+  font-size: 1.4rem;
 }
 
 .btn.primary-btn {
   background: var(--primary-color);
+}
+
+.btn.lg {
+  min-width: 16vmax;
+}
+
+.btn.outline {
+  border-bottom: 2px solid #000;
+  min-width: auto;
+  width: auto;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.dark-txt {
+  color: var(--primary-color);
+}
+
+.btn.md {
+  min-width: 16vmax;
+}
+
+.btn.sm {
+  min-width: 14vmax;
 }
 
 /* typography */
@@ -67,26 +95,68 @@ body::-webkit-scrollbar {
   font-weight: 700;
 }
 
+.secondary-heading {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.center-txt {
+  text-align: center;
+}
+
+.filter-heading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.mgb-2 {
+  margin-bottom: 2rem;
+}
+
 .lead {
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--primary-color);
 }
 
-@media only screen and (width > 26.5rem) {
+/* row */
+.row {
+  padding: 0 2.5vmax;
+}
+
+@media only screen and (width >= 26.5rem) {
   .primary-heading {
     font-size: 3rem;
   }
+
+  .row {
+    padding: 0 4vmax;
+  }
 }
 
-@media only screen and (width > 48rem) {
+@media only screen and (width >= 48rem) {
   .primary-heading {
     font-size: 3.5rem;
+  }
+
+  .row {
+    padding: 0 6vmax;
+  }
+
+  .secondary-heading {
+    font-size: 1.8rem;
   }
 }
 
 @media only screen and (width > 64rem) {
   .primary-heading {
     font-size: 4.5rem;
+  }
+
+  .row {
+    padding: 0 8vmax;
   }
 }

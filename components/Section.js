@@ -3,7 +3,7 @@ import { BsDash } from "react-icons/bs";
 
 const Section = ({ children, heading }) => {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} row`}>
       <div className={styles["section-container"]}>
         <h3 className={styles["section-heading"]}>
           <BsDash className={styles["section-heading-icon"]} />
